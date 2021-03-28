@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const router = express.Router();
 const app = express();
-const port = 3000
+const port = 8080
 const Crypt = require('crypto-js')
 
 let hash = "4b6c4d9d79d55456a50b98de2587d2eb9e51c57a60c7ef15344dc974fc69ed9b" // ElectronAPPtedyv2ezpez
