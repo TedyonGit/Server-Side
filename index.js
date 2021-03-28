@@ -169,7 +169,7 @@ app.get('/', (req, res) => {
 	res.send('A mers.');
 })
 
-app.listen(port,() => {
+app.listen(process.env.PORT || 3000,() => {
   console.log("Started on PORT 3000");
 })
 
