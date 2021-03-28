@@ -166,7 +166,8 @@ app.post('/countWars', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-	res.send('A mers.');
+	res.statusCode = 404;
+	res.end();
 })
 
 app.listen(process.env.PORT || 3000,() => {
