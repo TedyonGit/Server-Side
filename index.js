@@ -166,7 +166,7 @@ app.post('/countWars', (req, res) => {
 })
 
 app.get('/', (req, res) => {
-	res.send('A mers');
+	res.send('A mers.');
 })
 
 app.listen(port,() => {
