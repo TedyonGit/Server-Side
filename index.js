@@ -51,7 +51,9 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
   <option value="saab">Saab</option>
   <option value="mercedes">Mercedes</option>
   <option value="audi">Audi</option>
-</select>`
+</select>
+<div id="ColorPickerButton"></div>
+`
 					})
 					res.send(stuff)
 					res.end();
