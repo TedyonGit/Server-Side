@@ -68,7 +68,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
          				<ul class="default_option">
          					<li>
          						<div class="option">
-         							<p>None</p>
+         							<p>NUMERGE</p>
          						</div>
          					</li>
          				</ul>
