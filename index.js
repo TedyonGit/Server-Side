@@ -63,6 +63,38 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
          					</li>
          				</ul>
          			</div>
+				</div>
+				<div class="dropdown">
+         				<ul class="default_option">
+         					<li>
+         						<div class="option">
+         							<p>None</p>
+         						</div>
+         					</li>
+         				</ul>
+         				<ul class="select_dropdown">
+         					<li> 
+         						<div class="option RDT">
+         							<p>RDT</p>
+         						</div>
+         					</li>
+         					 <li> 
+         						<div class="option DNB">
+         							<p>DNB</p>
+         						</div>
+         					</li>
+         					<li> 
+         						<div class="option BLS">
+         							<p>BLS</p>
+         						</div>
+         					</li>
+         					<li> 
+         						<div class="option GRV">
+         							<p>GRV</p>
+         						</div>
+         					</li>
+         				</ul>
+         			</div>
 				</div>`
 					})
 					res.send(stuff)
