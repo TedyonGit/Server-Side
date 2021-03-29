@@ -42,22 +42,22 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
          				</ul>
          				<ul class="select_dropdown">
          					<li> 
-         						<div class="option RDT">
+         						<div class="option">
          							<p>RDT</p>
          						</div>
          					</li>
          					 <li> 
-         						<div class="option DNB">
+         						<div class="option">
          							<p>DNB</p>
          						</div>
          					</li>
          					<li> 
-         						<div class="option BLS">
+         						<div class="option">
          							<p>BLS</p>
          						</div>
          					</li>
          					<li> 
-         						<div class="option GRV">
+         						<div class="option">
          							<p>GRV</p>
          						</div>
          					</li>
@@ -74,23 +74,23 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
          				</ul>
          				<ul class="select_dropdown">
          					<li> 
-         						<div class="option RDT">
-         							<p>RDT</p>
+         						<div class="option">
+         							<p>Salut</p>
          						</div>
          					</li>
          					 <li> 
-         						<div class="option DNB">
-         							<p>DNB</p>
+         						<div class="option">
+         							<p>Salut2</p>
          						</div>
          					</li>
          					<li> 
-         						<div class="option BLS">
-         							<p>BLS</p>
+         						<div class="option">
+         							<p>salut3</p>
          						</div>
          					</li>
          					<li> 
-         						<div class="option GRV">
-         							<p>GRV</p>
+         						<div class="option">
+         							<p>Salut4</p>
          						</div>
          					</li>
          				</ul>
