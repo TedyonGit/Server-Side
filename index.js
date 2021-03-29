@@ -32,7 +32,8 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 				case "*": {
 					let stuff = JSON.stringify({
 					"title": "Evidentiator",
-					"content": `<div class="dropdown">
+					"content": `<div class="dropdown_container">
+					<div class="dropdown">
          				<ul class="default_option">
          					<li>
          						<div class="option">
@@ -95,7 +96,8 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
          					</li>
          				</ul>
          			</div>
-				</div>`
+				</div>
+			<div>`
 					})
 					res.send(stuff)
 					res.end();
