@@ -32,12 +32,38 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 				case "*": {
 					let stuff = JSON.stringify({
 					"title": "Evidentiator",
-					"content": `          <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>`
+					"content": `<div class="dropdown">
+         				<ul class="default_option">
+         					<li>
+         						<div class="option">
+         							<p>None</p>
+         						</div>
+         					</li>
+         				</ul>
+         				<ul class="select_dropdown">
+         					<li> 
+         						<div class="option RDT">
+         							<p>RDT</p>
+         						</div>
+         					</li>
+         					 <li> 
+         						<div class="option DNB">
+         							<p>DNB</p>
+         						</div>
+         					</li>
+         					<li> 
+         						<div class="option BLS">
+         							<p>BLS</p>
+         						</div>
+         					</li>
+         					<li> 
+         						<div class="option GRV">
+         							<p>GRV</p>
+         						</div>
+         					</li>
+         				</ul>
+         			</div>
+				</div>`
 					})
 					res.send(stuff)
 					res.end();
@@ -46,15 +72,23 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 				case "&": {
 					let stuff = JSON.stringify({
 					"title": "Interface Editor",
-					"content": `          <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>
-<div id="ColorPickerButton">
+					"content": `
+<div id="Elements">
+<div id="ColorPickerButton" data-target="content"></div>
+<label>Content</label>
 </div>
-<h1>Sal</h1>
+<div id="Elements">
+<div id="ColorPickerButton" data-target="title-bar"></div>
+<label>Title Bar</label>
+</div>
+<div id="Elements">
+<div id="ColorPickerButton" data-target="buttons"></div>
+<label>Buttons</label>
+</div>
+<div id="Elements" style="width: 70px;">
+<div id="ColorPickerButton" data-target="text"></div>
+<label>Text</label>
+</div>
 `
 					})
 					res.send(stuff)
@@ -95,20 +129,46 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 })
 
 app.post('/setInterface', (req, res) => {
-	console.log(req.body.GlobalColor)
 	let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	decrypt = decrypt.toString(Crypt.enc.Utf8)
-	if(req.body.GlobalColor != undefined)
+	if(req.body.Color != undefined && req.body.Data != undefined)
 	{
 		db.collection('Interface').doc(decrypt).get().then(q => {
 			if(q.exists)
 			{
-				db.collection('Interface').doc(decrypt).update({
-					"GlobalColor": req.body.GlobalColor
-				})
+				switch(req.body.Data)
+				{
+					case "content": {
+						db.collection('Interface').doc(decrypt).update({
+							"content": req.body.Color
+						})
+						break;
+					}
+					case "title-bar": {
+						db.collection('Interface').doc(decrypt).update({
+							"title-bar": req.body.Color
+						})
+						break;
+					}
+					case "buttons": {
+						db.collection('Interface').doc(decrypt).update({
+							"buttons": req.body.Color
+						})
+						break;
+					}
+					case "text": {
+						db.collection('Interface').doc(decrypt).update({
+							"text": req.body.Color
+						})
+						break;
+					}
+				}
 			} else {
 				db.collection('Interface').doc(decrypt).set({
-					"GlobalColor": req.body.GlobalColor
+					"title-bar": req.body.Color,
+					"buttons": req.body.Color,
+					"content": req.body.Color,
+					"text": req.body.Color
 				})
 			}
 		})
@@ -124,7 +184,13 @@ app.get('/getInterface', (req, res) => {
 		db.collection('Interface').doc(decrypt).get().then(q => {
 			if(q.exists)
 			{
-				res.send(q.data().GlobalColor);
+				let main = q.data();
+				res.send(JSON.stringify({
+					"content": `${q.data().content}`,
+					"title-bar": `${q.data()['title-bar']}`,
+					"buttons": `${q.data().buttons}`,
+					"text": `${q.data().text}`
+				}))
 				res.end();
 			}
 		})
