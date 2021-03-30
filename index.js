@@ -36,7 +36,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 					<div class="dropdown_container">
 						<div class="dropdown">
 
-	         				<ul class="default_option" target="false">
+	         				<ul class="default_option">
 	         					<li>
 	         						<div class="option">
 	         							<p>None</p>
@@ -70,7 +70,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
          			</div>
 
 					<div class="dropdown">
-	         				<ul class="default_option" target="false">
+	         				<ul class="default_option">
 	         					<li>
 	         						<div class="option">
 	         							<p>NUMERGE</p>
