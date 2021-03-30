@@ -47,22 +47,22 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	         				<ul class="select_dropdown">
 	         					<li> 
 	         						<div class="option">
-	         							<p>RDT</p>
+	         							<p>Red Dragons Triads</p>
 	         						</div>
 	         					</li>
 	         					 <li> 
 	         						<div class="option">
-	         							<p>DNB</p>
+	         							<p>Da Nang Boys</p>
 	         						</div>
 	         					</li>
 	         					<li> 
 	         						<div class="option">
-	         							<p>BLS</p>
+	         							<p>Ballas Family</p>
 	         						</div>
 	         					</li>
 	         					<li> 
 	         						<div class="option">
-	         							<p>GRV</p>
+	         							<p>Grove Street</p>
 	         						</div>
 	         					</li>
 	         				</ul>
@@ -73,7 +73,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	         				<ul class="default_option">
 	         					<li>
 	         						<div class="option">
-	         							<p>NUMERGE</p>
+	         							<p>None</p>
 	         						</div>
 	         					</li>
 	         				</ul>
@@ -81,22 +81,22 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	         				<ul class="select_dropdown">
 	         					<li> 
 	         						<div class="option">
-	         							<p>Salut</p>
+	         							<p>OG-Times</p>
 	         						</div>
 	         					</li>
 	         					 <li> 
 	         						<div class="option">
-	         							<p>Salut2</p>
+	         							<p>Nephrite</p>
 	         						</div>
 	         					</li>
 	         					<li> 
 	         						<div class="option">
-	         							<p>salut3</p>
+	         							<p>B-Hood</p>
 	         						</div>
 	         					</li>
-	         					<li> 
+	         					 <li> 
 	         						<div class="option">
-	         							<p>Salut4</p>
+	         							<p>B-Zone</p>
 	         						</div>
 	         					</li>
 	         				</ul>
