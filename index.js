@@ -32,72 +32,77 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 				case "*": {
 					let stuff = JSON.stringify({
 					"title": "Evidentiator",
-					"content": `<div class="dropdown_container">
+					"content": `
+					<div class="dropdown_container">
+						<div class="dropdown">
+
+	         				<ul class="default_option">
+	         					<li>
+	         						<div class="option">
+	         							<p>None</p>
+	         						</div>
+	         					</li>
+	         				</ul>
+
+	         				<ul class="select_dropdown">
+	         					<li> 
+	         						<div class="option">
+	         							<p>RDT</p>
+	         						</div>
+	         					</li>
+	         					 <li> 
+	         						<div class="option">
+	         							<p>DNB</p>
+	         						</div>
+	         					</li>
+	         					<li> 
+	         						<div class="option">
+	         							<p>BLS</p>
+	         						</div>
+	         					</li>
+	         					<li> 
+	         						<div class="option">
+	         							<p>GRV</p>
+	         						</div>
+	         					</li>
+	         				</ul>
+
+         			</div>
+
 					<div class="dropdown">
-         				<ul class="default_option">
-         					<li>
-         						<div class="option">
-         							<p>None</p>
-         						</div>
-         					</li>
-         				</ul>
-         				<ul class="select_dropdown">
-         					<li> 
-         						<div class="option">
-         							<p>RDT</p>
-         						</div>
-         					</li>
-         					 <li> 
-         						<div class="option">
-         							<p>DNB</p>
-         						</div>
-         					</li>
-         					<li> 
-         						<div class="option">
-         							<p>BLS</p>
-         						</div>
-         					</li>
-         					<li> 
-         						<div class="option">
-         							<p>GRV</p>
-         						</div>
-         					</li>
-         				</ul>
+	         				<ul class="default_option">
+	         					<li>
+	         						<div class="option">
+	         							<p>NUMERGE</p>
+	         						</div>
+	         					</li>
+	         				</ul>
+
+	         				<ul class="select_dropdown">
+	         					<li> 
+	         						<div class="option">
+	         							<p>Salut</p>
+	         						</div>
+	         					</li>
+	         					 <li> 
+	         						<div class="option">
+	         							<p>Salut2</p>
+	         						</div>
+	         					</li>
+	         					<li> 
+	         						<div class="option">
+	         							<p>salut3</p>
+	         						</div>
+	         					</li>
+	         					<li> 
+	         						<div class="option">
+	         							<p>Salut4</p>
+	         						</div>
+	         					</li>
+	         				</ul>
+
          			</div>
-				</div>
-				<div class="dropdown">
-         				<ul class="default_option">
-         					<li>
-         						<div class="option">
-         							<p>NUMERGE</p>
-         						</div>
-         					</li>
-         				</ul>
-         				<ul class="select_dropdown">
-         					<li> 
-         						<div class="option">
-         							<p>Salut</p>
-         						</div>
-         					</li>
-         					 <li> 
-         						<div class="option">
-         							<p>Salut2</p>
-         						</div>
-         					</li>
-         					<li> 
-         						<div class="option">
-         							<p>salut3</p>
-         						</div>
-         					</li>
-         					<li> 
-         						<div class="option">
-         							<p>Salut4</p>
-         						</div>
-         					</li>
-         				</ul>
-         			</div>
-				</div>
-			<div>`
+			</div>`
 					})
 					res.send(stuff)
 					res.end();
