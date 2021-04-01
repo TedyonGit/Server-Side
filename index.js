@@ -240,6 +240,7 @@ app.get('/getInterface', (req, res) => {
 
 
 app.get('/getAcces', (req, res) => {
+	console.log(req)
 	db.collection('Accounts').doc(req.get('content')).get().then(q => 
 	{
 		if(q.exists) {
