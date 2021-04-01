@@ -125,7 +125,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 <div id="ColorPickerButton" data-target="buttons"></div>
 <label>Buttons</label>
 </div>
-<div id="Elements">
+<div id="Elements" data="text">
 <div id="ColorPickerButton" data-target="text"></div>
 <label>Text</label>
 </div>
