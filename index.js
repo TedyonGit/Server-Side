@@ -152,11 +152,11 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 				case "%": {
 					let stuff = JSON.stringify({
 					"title": "Options",
-					"content": `<div class="Elements">
-						<a>Your licence type: x</a>
-						<a>Expire date: 20.20.2023</a>
-						<a>Save config</a>
-						<a>x</a>
+					"content": `<div class="ElementsOption">
+						<ul>
+							<li><a>Licence type: x</a></li>
+							<li><a>Licence expire on: x</a></li>
+						</ul>
 					</div>`})
 					res.send(stuff)
 					res.end();
