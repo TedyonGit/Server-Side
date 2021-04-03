@@ -152,13 +152,12 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 				case "%": {
 					let stuff = JSON.stringify({
 					"title": "Options",
-					"content": `          <select name="cars" id="cars">
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
-</select>`
-					})
+					"content": `<div class="Elements">
+						<a>Your licence type: x</a>
+						<a>Expire date: 20.20.2023</a>
+						<a>Save config</a>
+						<a>x</a>
+					</div>`})
 					res.send(stuff)
 					res.end();
 					break;
@@ -285,7 +284,7 @@ app.listen(process.env.PORT || 3000,() => {
   console.log("Started on PORT ceva");
 })
 
-function Decode(c)
+/*function Decode(c)  // O functie inutila, dar, da.
 {
 	let d = Crypt.AES.decrypt(c, ("Tedy" + "ENC"));
 	d = d.toString(Crypt.enc.Utf8)
@@ -293,4 +292,52 @@ function Decode(c)
 	d = d.filter((v,p,i) => p === 0 || v !== i[p-1])
 	if(d[0] == d[d.length -1]) return d.join('').slice(0, d.length-1);
 	return d.join('')
-}
+}*/
+
+/*
+
+
+
+[Nephrite] [] Done
+-Da Nang Boys
+-The Italian Mafia
+-The Russian Mafia
+-Red Dragons Triads
+-Ballas
+-Crips Gang
+-Grove Street
+-Los Aztecas
+-San Fierro Rifa
+
+[B-HOOD] [] Done
+-Avispa Cartel
+-SF Bikers
+-The Rifa
+-Verdant Family
+-The Ballas
+-Los Vagos
+-Los Aztecas
+-Grove Street
+
+[OG-Times] [] Done
+-Grove Street
+-The Russian Mafia
+-Los Vagos
+-Red Dragons Triads
+-Los Aztecas
+-The Ballas Family
+-Da Nang Boys
+-Avispa Rifa
+-The Italian Mafia
+
+[B-Zone] [] Done
+-Green STreet Bloods
+-Verdant Family
+-Vietnamese Boys
+-The Tsar Bratva
+-Red Dragon Triad
+-Southern Pimps
+-Avispa Rifa
+-69 Pier Mobs
+-El Loco Cartel
+*/
