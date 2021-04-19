@@ -102,7 +102,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	         				</ul>
 
          			</div>
-         			<button>Submit</button>
+         			<button class="list-submit">Submit</button>
 			</div>`
 					})
 					res.send(stuff)
