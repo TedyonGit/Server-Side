@@ -34,6 +34,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 					"title": "Evidentiator",
 					"content": `
 					<div class="dropdown_container">
+					<label>Faction</label>
 						<div class="dropdown">
 
 	         				<ul class="default_option">
@@ -68,7 +69,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	         				</ul>
 
          			</div>
-
+         			<label>Server</label>
 					<div class="dropdown">
 	         				<ul class="default_option">
 	         					<li>
