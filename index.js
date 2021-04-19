@@ -33,42 +33,6 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 					let stuff = JSON.stringify({
 					"title": "Evidentiator",
 					"content": `
-					<div class="dropdown_container">
-					<label>Faction</label>
-						<div class="dropdown">
-
-	         				<ul class="default_option">
-	         					<li>
-	         						<div class="option">
-	         							<p>None</p>
-	         						</div>
-	         					</li>
-	         				</ul>
-
-	         				<ul class="select_dropdown">
-	         					<li> 
-	         						<div class="option">
-	         							<p>Red Dragons Triads</p>
-	         						</div>
-	         					</li>
-	         					 <li> 
-	         						<div class="option">
-	         							<p>Da Nang Boys</p>
-	         						</div>
-	         					</li>
-	         					<li> 
-	         						<div class="option">
-	         							<p>Ballas Family</p>
-	         						</div>
-	         					</li>
-	         					<li> 
-	         						<div class="option">
-	         							<p>Grove Street</p>
-	         						</div>
-	         					</li>
-	         				</ul>
-
-         			</div>
          			<label>Server</label>
 					<div class="dropdown">
 	         				<ul class="default_option">
