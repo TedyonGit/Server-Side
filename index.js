@@ -27,9 +27,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
 		{
-			res.send(`<!DOCTYPE html>
-<html>
-<head>
+			res.send(`<head>
 	<meta charset="UTF-8">
 	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
@@ -122,9 +120,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 		</div>
 
 	</body>
-			<script src="./renderer.js"></script>
-
-</html>`)
+			<script src="./renderer.js"></script>`)
 		}
 	})
 })
@@ -132,7 +128,6 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 
 
 app.get('/getAcces', (req, res) => {
-	console.log(req)
 	db.collection('Accounts').doc(req.get('content')).get().then(q => 
 	{
 		if(q.exists) {
