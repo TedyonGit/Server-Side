@@ -34,10 +34,10 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
 	<meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
- <link rel="stylesheet" href="./monolith.min.css" style-src='unsafe-inline'/>  <!-- 'monolith' theme -->
-   <link rel="stylesheet" href="./nano.min.css"/> <!-- 'nano' theme -->
-	<link rel="stylesheet" type="text/css" href="./css.css" style-src='unsafe-inline'>
-	<link rel="stylesheet" href="./lineawsome/css/line-awesome.min.css">
+ <link rel="stylesheet" href="monolith.min.css" style-src='unsafe-inline'/>  <!-- 'monolith' theme -->
+   <link rel="stylesheet" href="nano.min.css"/> <!-- 'nano' theme -->
+	<link rel="stylesheet" type="text/css" href="css.css" style-src='unsafe-inline'>
+	<link rel="stylesheet" href="lineawsome/css/line-awesome.min.css">
 	<title>Interfata</title>
 </head>
 <body>
