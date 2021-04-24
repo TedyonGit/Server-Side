@@ -27,7 +27,9 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
 		{
-			res.send(`<head>
+			res.send(`<!DOCTYPE html>
+<html>
+<head>
 	<meta charset="UTF-8">
 	<!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
 	<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:;">
@@ -40,7 +42,7 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 </head>
 <body>
 		
-		<!--<div id="title-bar">
+		<div id="title-bar">
 			<span id="WinTitle">Interfata</span>
 			<button id="xB">X</button>
 		</div>
@@ -116,11 +118,13 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 					<li><span>title4</span><a>X</a></li>
 				</ul>
 			</div>
-			<button class="StartButton"><i class="las la-play"></i>Start</button>-->
+			<button class="StartButton"><i class="las la-play"></i>Start</button>
 		</div>
 
 	</body>
-			<script src="./renderer.js"></script>`)
+			<script src="./renderer.js"></script>
+
+</html>`)
 		}
 	})
 })
