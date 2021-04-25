@@ -57,7 +57,7 @@ app.get('/licenceInfo', (req, res) => {
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
 		{
-			res.send(`Name: ${q.data().Name}|Licence expire on: ${q.data()['Expire-Date']}|Licence type: ${q.data().Type}|Server: ${q.data().server}`)
+			res.send(`Licence expire on: ${q.data()['Expire-Date']}|Licence type: ${q.data().Type}|Server: ${q.data().server}|Name: ${q.data().Name}`)
 		}
 	})
 })
