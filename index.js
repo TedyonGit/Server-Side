@@ -22,7 +22,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get('/content', (req, res) => {
-let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
+	let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 	decrypt = decrypt.toString(Crypt.enc.Utf8)
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
@@ -46,6 +46,18 @@ let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
 					break;
 				}
 			}
+		}
+	})
+})
+
+
+app.get('/licenceInfo', (req, res) => {
+	let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
+	decrypt = decrypt.toString(Crypt.enc.Utf8)
+	db.collection('Accounts').doc(decrypt).get().then(q => {
+		if(q.exists)
+		{
+			res.send(`Name: ${q.data().Name}|Licence expire on: ${q.data()['Expire-Date']}|Licence type: ${q.data().Type}|Server: ${q.data().server}`)
 		}
 	})
 })
