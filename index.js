@@ -137,7 +137,10 @@ app.listen(process.env.PORT || 3000,() => {
 function GetWars(host)
 {
 	axios.get(host)
-	.then(r => r.text())
+	.then(function(response) {
+		let data = response.data;
+		console.log(data)
+	})
 	.catch(err => {if(err) throw err})
 	.then(() => {})
 }
