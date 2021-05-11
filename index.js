@@ -106,6 +106,7 @@ app.post('/sendData',(request,response) => {
 				}
 			}
 			GetWars(host)
+			response.end();
 		} else {
 			response.send('nu exista')
 		}
