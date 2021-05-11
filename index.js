@@ -84,9 +84,9 @@ app.post('/sendData',(request,response) => {
 		db.collection('Accounts').doc(request.body.Data).get().then(q => {
 			if(q.exists)
 			{
-				response.send(q.data().Name);
+				response.send('sal');
 			} else {
-
+				response.send('nu exista')
 			}
 		})
 	} else {
