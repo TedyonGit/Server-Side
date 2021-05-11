@@ -4,6 +4,7 @@ const router = express.Router();
 const app = express();
 const port = 8080
 const Crypt = require('crypto-js')
+const fetch = require('node-fetch')
 
 let hash = "4b6c4d9d79d55456a50b98de2587d2eb9e51c57a60c7ef15344dc974fc69ed9b" // ElectronAPPtedyv2ezpez
 
@@ -83,7 +84,33 @@ app.post('/sendData',(request,response) => {
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
 		{
-			response.send('sal');
+			let host;
+			switch(q.data().server)
+			{
+				case "og-times": {
+					host = 'https://eartpanel.og-times.ro/wars'
+					break;
+				}
+				case "nephrite": {
+
+					break;
+				}
+				case "b-hood": {
+
+					break;
+				}
+				case "bugged": {
+
+					break;
+				}
+			}
+			fetch(host, {
+				method: "get"
+			})
+			.then(res = > res.text())
+			.then(result => {
+				console.log(result)
+			})
 		} else {
 			response.send('nu exista')
 		}
