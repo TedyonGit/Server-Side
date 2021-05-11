@@ -146,7 +146,7 @@ function GetWars(host)
 		{
 			if(data[i].includes('pull-left') || data[i].includes('pull-right'))
 			{
-				console.log(data[i])
+				console.log(data[i],data[i+10])
 			}
 		}
 	})
