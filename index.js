@@ -57,7 +57,7 @@ app.get('/licenceInfo', (req, res) => {
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
 		{
-			res.send(`<i class="las la-exclamation-circle"></i>Licence expire on: ${q.data()['Expire-Date']}|<i class="las la-clipboard-check"></i>Licence type: ${q.data().Type}|<i class="las la-server"></i>Server: ${q.data().server}|Name: ${q.data().Name}`)
+			res.send(`<i class="las la-exclamation-circle"></i>Licence expire on: ${q.data()['Expire-Date']}|<i class="las la-clipboard-check"></i>Licence type: ${q.data().Type}|<i class="las la-server"></i>Server: ${q.data().server}|<i class="las la-user-alt"></i>Name: ${q.data().Name}`)
 		}
 	})
 })
