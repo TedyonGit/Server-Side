@@ -139,13 +139,14 @@ function GetWars(host)
 {
 	axios.get(host)
 	.then(function(response) {
-		let data = response.data;
-		data = data.split('<')
 		for(var i = 0; i < data.length; i++)
 		{
-			if(data[i].includes('h6>'))
+			if(data[i].includes('card-block'))
 			{
-				console.log(data[i])
+				//Left
+				console.log(data[i+2])
+				//Right
+				console.log(data[i+3])
 			}
 		}
 	})
