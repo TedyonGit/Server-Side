@@ -78,7 +78,7 @@ app.get('/getAcces', (req, res) => {
 })
 
 app.post('/sendData',(request,response) => {
-	let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
+	let decrypt = Crypt.AES.decrypt(request.get('TOKEN').toString(), hash);
 	decrypt = decrypt.toString(Crypt.enc.Utf8)
 	db.collection('Accounts').doc(decrypt).get().then(q => {
 		if(q.exists)
