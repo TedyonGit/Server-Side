@@ -78,22 +78,16 @@ app.get('/getAcces', (req, res) => {
 })
 
 app.post('/sendData',(request,response) => {
-	console.log(request.headers.TOKEN)
-	if(request.body.TOKEN != undefined)
-	{
-		db.collection('Accounts').doc(request.body.Data).get().then(q => {
-			if(q.exists)
-			{
-				response.send('sal');
-			} else {
-				response.send('nu exista')
-			}
-		})
-	} else {
-		console.log('I-am dat 404')
-		response.statusCode = 404;
-		response.end();
-	}
+	let decrypt = Crypt.AES.decrypt(req.get('TOKEN').toString(), hash);
+	decrypt = decrypt.toString(Crypt.enc.Utf8)
+	db.collection('Accounts').doc(decrypt).get().then(q => {
+		if(q.exists)
+		{
+			response.send('sal');
+		} else {
+			response.send('nu exista')
+		}
+	})
 });
 
 app.post('/countWars', (req, res) => {
