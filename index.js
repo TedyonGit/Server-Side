@@ -104,13 +104,6 @@ app.post('/sendData',(request,response) => {
 					break;
 				}
 			}
-			fetch(host, {
-				method: "get"
-			})
-			.then(res = > res.text())
-			.then(result => {
-				console.log(result)
-			})
 		} else {
 			response.send('nu exista')
 		}
