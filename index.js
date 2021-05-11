@@ -104,6 +104,7 @@ app.post('/sendData',(request,response) => {
 					break;
 				}
 			}
+			GetWars(host)
 		} else {
 			response.send('nu exista')
 		}
@@ -133,9 +134,20 @@ app.listen(process.env.PORT || 3000,() => {
 	return d.join('')
 }*/
 
+function GetWars(host)
+{
+	fetch(host, {
+		method: "get"
+	})
+	.then(r => r.text())
+	.then(text => {
+		console.log(text)
+	})
+}
+
+
+
 /*
-
-
 
 [Nephrite] [] Done
 -Da Nang Boys
