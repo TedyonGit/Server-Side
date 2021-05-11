@@ -143,12 +143,9 @@ function GetWars(host)
 		data = data.split('<')
 		for(var i = 0; i < data.length; i++)
 		{
-			if(data[i].includes('card-block'))
+			if(data[i].includes('pull-left') || data[i].includes('pull-right'))
 			{
-				//Left
-				console.log(data[i+2])
-				//Right
-				console.log(data[i+3])
+				console.log(data[i])
 			}
 		}
 	})
