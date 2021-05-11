@@ -89,7 +89,7 @@ app.post('/sendData',(request,response) => {
 			switch(q.data().server)
 			{
 				case "og-times": {
-					host = 'https://eartpanel.og-times.ro/wars'
+					host = 'https://earthpanel.og-times.ro/wars'
 					break;
 				}
 				case "nephrite": {
