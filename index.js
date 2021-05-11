@@ -69,6 +69,7 @@ app.get('/getAcces', (req, res) => {
 	db.collection('Accounts').doc(req.get('content')).get().then(q => 
 	{
 		if(q.exists) {
+			console.log(Crypt.AES.encrypt(req.get('content'), hash).toString())
 			res.send(Crypt.AES.encrypt(req.get('content'), hash).toString())
 			res.end();
 		} else {
