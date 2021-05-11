@@ -140,7 +140,14 @@ function GetWars(host)
 	axios.get(host)
 	.then(function(response) {
 		let data = response.data;
-		console.log(data)
+		data = data.split('<')
+		for(var i = 0; i < data.length; i++)
+		{
+			if(data[i].includes('h6>'))
+			{
+				console.log(data[i])
+			}
+		}
 	})
 	.catch(err => {if(err) throw err})
 	.then(() => {})
