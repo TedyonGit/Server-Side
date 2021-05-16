@@ -141,12 +141,17 @@ function GetWars(host)
 	axios.get(host)
 	.then(function(response) {
 		let data = response.data;
-		data = data.split('<')
+		data = data.split('>')
 		for(var i = 0; i < data.length; i++)
 		{
-			if(data[i].includes('pull-left') || data[i].includes('pull-right'))
+			if(data[i].includes('pull-left'))
 			{
+				// left and right
+				let Mafii = data[i].slice()
 				console.log(data[i],data[i+10])
+			} else if(data[i].includes('pull-right'))
+			{
+				console.log(data[i],data[i+11])
 			}
 		}
 	})
