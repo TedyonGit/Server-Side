@@ -144,14 +144,9 @@ function GetWars(host)
 		data = data.split('>')
 		for(var i = 0; i < data.length; i++)
 		{
-			if(data[i].includes('pull-left'))
+			if(data[i].includes('cd-details'))
 			{
-				// left and right
-				let Mafii = data[i].slice()
-				console.log(data[i],data[i+10])
-			} else if(data[i].includes('pull-right'))
-			{
-				console.log(data[i],data[i+11])
+				console.log(data[i+1])
 			}
 		}
 	})
