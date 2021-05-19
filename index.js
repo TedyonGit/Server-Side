@@ -146,7 +146,7 @@ function GetWars(host)
 		{
 			if(data[i].includes('cd-details'))
 			{
-				console.log(data[i+1])
+				console.log(data[i])
 			}
 		}
 	})
