@@ -138,7 +138,7 @@ function GetWars(host)
 		{
 			if(data[i].includes('cd-details'))
 			{
-				let date = data[i+2].split('\n')//.slice(24, data[i+2].length-3);
+				let date = data[i+2].split('\n')[1].slice(29, data[i+2].split('\n')[1].length-29)//.slice(24, data[i+2].length-3);
 				let timp = data[i+1].slice(24, data[i+1].length-3);
 				console.log(date, timp)
 			}
