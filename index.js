@@ -140,7 +140,7 @@ function GetWars(host)
 			{
 				let date = data[i+3].slice(24, data[i+1].length-3);
 				let timp = data[i+1].slice(24, data[i+1].length-3);
-				console.log(data, timp)
+				console.log(date, timp)
 			}
 		}
 	})
