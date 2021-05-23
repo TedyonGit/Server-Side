@@ -122,8 +122,9 @@ app.get('/', (req, res) => {
 	res.end();
 })
 
-app.listen(process.env.PORT || 3000,() => {
-  console.log("Started on PORT ceva");
+app.listen(process.env.PORT || port,() => {
+  if(process.env.PORT != undefined) console.log(`Server started on ${process.env.PORT}`)
+  else console.log(`Server started on ${port}`)
 })
 
 
@@ -137,7 +138,7 @@ function GetWars(host)
 		{
 			if(data[i].includes('cd-details'))
 			{
-				let data = data[i+3].slice(24, data[i+1].length-3);
+				let date = data[i+3].slice(24, data[i+1].length-3);
 				let timp = data[i+1].slice(24, data[i+1].length-3);
 				console.log(data, timp)
 			}
