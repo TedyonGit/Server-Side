@@ -126,15 +126,6 @@ app.listen(process.env.PORT || 3000,() => {
   console.log("Started on PORT ceva");
 })
 
-/*function Decode(c)  // O functie inutila, dar, da.
-{
-	let d = Crypt.AES.decrypt(c, ("Tedy" + "ENC"));
-	d = d.toString(Crypt.enc.Utf8)
-	d = d.split('')
-	d = d.filter((v,p,i) => p === 0 || v !== i[p-1])
-	if(d[0] == d[d.length -1]) return d.join('').slice(0, d.length-1);
-	return d.join('')
-}*/
 
 function GetWars(host)
 {
@@ -146,7 +137,9 @@ function GetWars(host)
 		{
 			if(data[i].includes('cd-details'))
 			{
-				console.log(data[i+1].slice(24, data[i+1].length-3))
+				let data = data[i+3].slice(24, data[i+1].length-3);
+				let timp = data[i+1].slice(24, data[i+1].length-3);
+				console.log(data, timp)
 			}
 		}
 	})
@@ -154,6 +147,16 @@ function GetWars(host)
 	.then(() => {})
 }
 
+
+/*function Decode(c)  // O functie inutila, dar, da.
+{
+	let d = Crypt.AES.decrypt(c, ("Tedy" + "ENC"));
+	d = d.toString(Crypt.enc.Utf8)
+	d = d.split('')
+	d = d.filter((v,p,i) => p === 0 || v !== i[p-1])
+	if(d[0] == d[d.length -1]) return d.join('').slice(0, d.length-1);
+	return d.join('')
+}*/
 
 
 /*
