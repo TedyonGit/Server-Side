@@ -138,10 +138,9 @@ function GetWars(host)
 		{
 			if(data[i].includes('cd-details'))
 			{
-				let date1 = data[i+3];
-				let date2 = data[i+2];
+				let date = data[i+2].slice(24, data[i+2].length-3);
 				let timp = data[i+1].slice(24, data[i+1].length-3);
-				console.log(date2, timp)
+				console.log(date, timp)
 			}
 		}
 	})
