@@ -123,8 +123,8 @@ app.get('/', (req, res) => {
 })
 
 app.listen(process.env.PORT || port,() => {
-  if(process.env.PORT != undefined) console.log(`Server started on ${process.env.PORT}`)
-  else console.log(`Server started on ${port}`)
+  if(process.env.PORT != undefined) serverLog(`Server started on ${process.env.PORT}`)
+  else serverLog`Server started on ${port}`)
 })
 
 
@@ -140,7 +140,7 @@ function GetWars(host)
 			{
 				let date = data[i+2].split('\n')[1].slice(29, data[i+2].split('\n')[1].length-29)//.slice(24, data[i+2].length-3);
 				let timp = data[i+1].slice(24, data[i+1].length-3);
-				console.log(`Date: ${date}\nTimp: ${timp}`)
+				contentLog(`Date: ${date}\nTimp: ${timp}`)
 			}
 		}
 	})
@@ -205,3 +205,6 @@ function GetWars(host)
 -69 Pier Mobs
 -El Loco Cartel
 */
+
+function serverLog(content) {return console.log(`[WebHost Server] ${content}`);}
+function contentLog(content) {return console.log(`[WebHost Content] ${content}`);}
