@@ -141,7 +141,7 @@ function GetWars(host)
 				let date = data[i+2].split('\n')[1].slice(17, data[i+2].split('\n')[1].length-11)//.slice(24, data[i+2].length-3);
 				let timp = data[i+1].slice(24, data[i+1].length-3);
 				contentLog(`Date: ${date}\nTimp: ${timp}`)
-				console.log(data[i+1].split('\n')
+				console.log(data[i+1].split('\n'))
 			}
 		}
 	})
