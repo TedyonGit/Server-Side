@@ -73,6 +73,7 @@ app.get('/getAcces', (req, res) => {
 			res.send(Crypt.AES.encrypt(req.get('content'), hash).toString())
 			res.end();
 		} else {
+			console.log('test')
 			res.statusCode = 404;
 			res.end();
 		}
